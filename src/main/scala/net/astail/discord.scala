@@ -3,7 +3,7 @@ package net.astail
 import net.astail.Main.token
 import net.astail.Main.rev
 import net.dv8tion.jda.api.JDABuilder
-import net.dv8tion.jda.api.entities.{Activity, User}
+import net.dv8tion.jda.api.entities.{Activity, Member, User}
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import net.dv8tion.jda.api.utils.Compression
@@ -23,11 +23,17 @@ object discord {
     override def onMessageReceived(event: MessageReceivedEvent): Unit = {
       def sendMessage(x: String) = event.getTextChannel.sendMessage(x).queue
 
+      def getNickName(member: Member): String = {
+        member.getNickname match {
+          case null => member.getUser.getName
+          case _ => member.getNickname
+        }
+      }
       val message = event.getMessage.getContentDisplay
-      val messageUser: User = event.getMember.getUser
+      val messageUser: String = getNickName(event.getMember)
 
       if (!event.getAuthor.isBot) {
-        sendMessage(messageUser + ": " + message)
+        chatwork.post(messageUser + ": " + message)
       }
 
     }

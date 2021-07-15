@@ -15,7 +15,8 @@ libraryDependencies ++= Seq(
   "com.typesafe" % "config" % "1.4.1",
   "net.dv8tion" % "JDA" % "4.2.0_247",
   "ch.qos.logback" % "logback-classic" % "1.2.3",
-  "org.slf4j" % "slf4j-api" % "1.7.31"
+  "org.slf4j" % "slf4j-api" % "1.7.31",
+  "com.typesafe.play" %% "play-json" % "2.9.2"
 )
 
 enablePlugins(JavaAppPackaging)
