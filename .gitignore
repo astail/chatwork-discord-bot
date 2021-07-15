@@ -1,0 +1,9 @@
+.DS_Store
+.idea
+
+tmp
+target
+dist
+out
+logs
+.bsp
