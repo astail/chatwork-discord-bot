@@ -6,7 +6,7 @@ import org.slf4j.{Logger, LoggerFactory}
 object Main {
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
   val longRev = net.astail.Git.longHash
-  val token = ConfigFactory.load.getString("astel_bot_discord")
+  val token = ConfigFactory.load.getString("chatwork_discord_bot")
   val rev = net.astail.Git.shortHash
 
 
