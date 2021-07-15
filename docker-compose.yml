@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  chatwork-discord-bot:
+    image: astail/chatwork-discord-bot
+    environment:
+      CHATWORK_DISCORD_BOT: ${CHATWORK_DISCORD_BOT}
+      CHATWORK_ROOM_ID: ${CHATWORK_ROOM_ID}
+      CHATWORK_TOKEN: ${CHATWORK_TOKEN}
+      TZ: 'Asia/Tokyo'
+    restart: always
